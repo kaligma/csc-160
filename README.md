@@ -1,2 +1,2 @@
-# csc160-lesson01-104-02
-Write a program that iterates the Babylonian square root algorithm 100 times
+# csc-160
+Homework from FRCC csc-160 online course.
