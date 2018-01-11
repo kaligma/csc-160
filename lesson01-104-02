@@ -1,0 +1,43 @@
+//File Name: lesson01-104-02
+//Author: Christopher Abelein
+//Email Address: crabelein@gmail.com
+//Assignment Number: 1
+//Description: Write a program that iterates the Babylonian square root algorithm 100 times
+//Last Changed: Jenuary 20, 2017
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	
+	double number, r, guess, result;
+    int iteration;
+    
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(2);
+
+	cout << "Enter the number you wish to find the square root of as n, then press return.\n";
+	cout << "Number:";
+	cin >> number;
+	guess = number / 2;
+	iteration = 0;
+	cout << "\nFirst guess is: " << guess << ", iterating Babylonian square root algorithm 100 times for accuracy.\n";
+	
+	while (iteration < 100)
+	{
+		
+		r = number / guess;
+		guess = (guess + r) / 2;
+		iteration = iteration + 1;
+		
+	}
+	
+	result = guess;
+	cout << "\nFinished. The square root of " << number << ", as calculated by the Babylonian square root algorithm, is\n";
+	cout << ">>" << result << "<<\n";
+
+	return 0;
+	
+}
