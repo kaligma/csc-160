@@ -1,0 +1,106 @@
+//File Name: lesson01-106-04
+//Author: Christopher Abelein
+//Email Address: crabelein@gmail.com
+//Assignment Number: 1
+//Description: Create program to calculate face value of a loan to receive a specified amount of money
+//Last Changed: Jenuary 20, 2017
+
+#include <iostream>
+using namespace std;
+
+void recalculate();
+
+int main()
+{
+	
+	double dsramt, intrate, dur, mtlypm,  faceval;
+	
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(2);
+	
+	cout << "This program is designed to calculate the face value of a loan required to receive a specific amount of money.\n";
+	cout << "In order to do this, you will be required to enter three values.\n";
+	
+	cout << "\nThe first value required is the amount of money you want to receive. Please enter amount in dollars.\n";
+	cout << "Press return when finished: $";
+	cin >> dsramt;
+	
+	cout << "\nThe next value required is the interest rate. Please enter interest rate as percent.\n";
+	cout << "Press return when finished. %";
+	cin >> intrate;
+	
+	cout << "\nThe final value required is the duration of the loan. Please enter loan duration in months.\n";
+	cout << "Press return when finished. Months: ";
+	cin >> dur;
+	
+	cout << "\nCalculating...\n";
+	
+	dur = dur / 12;
+	intrate = intrate / 100;
+	faceval = dsramt / (1 - intrate * dur);
+	mtlypm = faceval / (dur * 12);
+	
+	cout << "\nFinished.\n";
+	cout << "\nIn order to receive $" << dsramt << " you will need to apply for a loan with a value of $" << faceval;
+	cout << "\nYour monthly payments will be $" << mtlypm;
+	
+	recalculate();
+	
+	return 0;
+
+}
+
+void recalculate()
+{
+	
+	char repeat;
+	
+	cout << "\n\nWould you like to repeat the calculation? y/n\n";
+	cout << "Press return when finished: ";
+	cin >> repeat;
+		
+	switch(repeat)
+	{
+		
+		case 'y':
+			cout << "\nRestarting...\n\n\n";
+			main();
+			break;
+				
+		case 'Y':
+			cout << "\nRestarting...\n\n\n";
+			main();
+			break;
+				
+		case 'n':
+			cout << "\nGoodbye\n";
+			return;
+			break;	
+					
+		case 'N':
+			cout << "\nGoodbye\n";
+			return;
+			break;
+			
+		default:
+			cout << "\nInvalid response. Please try again.";
+			recalculate();
+		
+			
+	}
+	
+}
+	
+/*
+n = f * r * t
+d = f - n
+
+n = f - d
+
+f - d = f * r * t
+1 - (d / f) = r * t
+d / f = 1 - r * t
+d = f(1 - r * t)
+f = d / (1 - r * t)
+*/
