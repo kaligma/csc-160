@@ -1,0 +1,38 @@
+//File Name: lesson01-105-05
+//Author: Christopher Abelein
+//Email Address: crabelein@gmail.com
+//Assignment Number: 1
+//Description: Rewrite provided program to adhere to Section 2.5 style rules
+//Last Changed: Jenuary 20, 2017
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	
+	double radius, vm;
+	
+	cout << "Enter radius of a sphere.\n" ;
+	cin >> radius;
+	
+	vm = (4.0 / 3.0) * 3.1415 * radius * radius * radius;
+	
+	cout << "The volume is " << vm << "\n";
+	
+	return 0;
+	
+}
+
+/* original program
+#include <iostream>
+using namespace std;
+int main()
+{
+	double radius, vm;
+	cout << "Enter radius of a sphere." << endl; cin >> radius;
+	vm = (4.0 / 3.0) * 3.1415 * radius * radius * radius;
+	cout << "The volume is " << vm << endl;
+	return 0;
+}
+*/
